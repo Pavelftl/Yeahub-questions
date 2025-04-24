@@ -1,0 +1,40 @@
+.filterSection {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	.title {
+		font-size: 14px;
+		color: var(--color-black-700);
+	}
+
+	.list {
+		display: flex;
+		gap: 8px;
+		flex-wrap: wrap;
+
+		.item {
+			display: flex;
+			gap: 8px;
+			flex-wrap: wrap;
+
+			> span {
+				color: var(--color-purple-700);
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.extButton {
+	margin-top: 8px;
+	border: 0;
+	color: var(--color-purple-700);
+	background-color: inherit;
+	align-self: self-start;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,14 @@
+.container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	.title {
+		margin-bottom: 12px;
+		line-height: 120%;
+	}
+
+	.description {
+		line-height: 130%;
+	}
+}

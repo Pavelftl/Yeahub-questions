@@ -1,0 +1,13 @@
+.backButton {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+	margin-bottom: 24px;
+	font-size: 16px;
+	color: var(--color-purple-700);
+	background-color: inherit;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

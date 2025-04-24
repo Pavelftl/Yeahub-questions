@@ -1,0 +1,25 @@
+@import url('_normalize.scss');
+
+:root {
+	--color-purple-700: #6a0bff;
+	--color-purple-300: #d2b6ff;
+	--color-purple-200: #e1ceff;
+	--color-purple-100: #f0e7ff;
+	--color-purple-50: #fdf4ff;
+	--color-black-900: #191919;
+	--color-black-800: #303030;
+	--color-black-300: #a3a3a3;
+	--color-black-25: #f4f4f4;
+	--color-black-10: #f8f8f8;
+}
+
+.wrapper {
+	min-height: 100vh;
+	background-color: var(--color-black-25);
+}
+
+.container {
+	max-width: 1216px;
+	margin: 0px auto;
+	padding: 40px 0 130px;
+}
