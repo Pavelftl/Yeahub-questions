@@ -1,11 +1,13 @@
+export { BackButton } from './BackButton/BackButton';
 export { Button } from './Button/Button';
 export { Container } from './Container/Container';
 export { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 export { ErrorMessage } from './ErrorMessage/ErrorMessage';
-export { InnerText } from './InnerText/InnerText';
+export { ExpandableButton } from './ExpandableButton/ExpandableButton';
 export { LinkButton } from './LinkButton/LinkButton';
 export { MetaInfo } from './MetaInfo/MetaInfo';
+export { Pagination } from './Pagination/ui/Pagination';
 export { Section } from './Section/Section';
 export { Sidebar } from './Sidebar/Sidebar';
 export { Skeleton } from './Skeleton/Skeleton';
-export { SkillTitle } from './SkillTitle/SkillTitle';
+export { TextHTML } from './TextHTML/TextHTML';

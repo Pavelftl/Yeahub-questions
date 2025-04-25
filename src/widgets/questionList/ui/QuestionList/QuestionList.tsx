@@ -1,19 +1,19 @@
-import { useAppSelector } from '@/app/appStore';
-
+import { useAppSelector } from '@/shared/lib/hooks';
 import { ErrorMessage, Section, Skeleton } from '@/shared/ui';
 
 import { QuestionItem } from '@/entities/question';
 import { useGetAllQuestionsQuery } from '@/entities/question/api/questionApi';
 import { useGetSpecializationByIdQuery } from '@/entities/specializations/api/specializations';
 
-import { QustionsEmptyList } from '../QustionsEmptyList/QustionsEmptyList';
+import { QuestionPagination } from '@/features/questions/paginate-questions';
+import { useSyncFiltersWithUrl } from '@/features/questions/sync-url-filters';
 
-import { useSyncFiltersWithUrl } from '@/features/filters/lib/useSincFiltersWithUrl';
-import { Pagination } from '@/features/pagination';
+import { QuestionEmptyList } from '../QuestionEmptyList/QuestionEmptyList';
+
 import styles from './styles.module.scss';
 
 export const QuestionList = () => {
-	const filters = useAppSelector(state => state.filters);
+	const filters = useAppSelector(state => state.questions.filters);
 
 	useSyncFiltersWithUrl(filters);
 
@@ -60,13 +60,13 @@ export const QuestionList = () => {
 		<Section>
 			<h1 className={styles.title}>Вопросы {specialization?.title}</h1>
 			{questions?.data.length === 0 ? (
-				<QustionsEmptyList />
+				<QuestionEmptyList />
 			) : (
 				<ul>
 					{questions?.data.map(question => (
 						<QuestionItem key={question.id} question={question} />
 					))}
-					<Pagination
+					<QuestionPagination
 						total={questions?.total ?? 0}
 						limit={questions?.limit ?? 0}
 					/>

@@ -1,0 +1,12 @@
+.extButton {
+	margin-top: 8px;
+	border: 0;
+	color: var(--color-purple-700);
+	background-color: inherit;
+	align-self: self-start;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

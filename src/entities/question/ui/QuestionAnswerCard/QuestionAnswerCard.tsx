@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 
-import { InnerText, Section } from '@/shared/ui';
+import { Section, TextHTML } from '@/shared/ui';
 
 import styles from './styles.module.scss';
 
@@ -31,7 +31,7 @@ export const QuestionAnswerCard = ({ answer, isLongAnswer = false }: Props) => {
 				className={`${isLongAnswer ? styles.longAnswer : ''}`}
 				style={{ maxHeight: `${height}px` }}
 			>
-				<InnerText text={answer} />
+				<TextHTML text={answer} />
 				{isLongAnswer && (
 					<div
 						className={`${styles.buttonContainer} ${isOpen ? styles.open : ''}`}

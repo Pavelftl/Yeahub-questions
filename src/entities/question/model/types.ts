@@ -16,5 +16,14 @@ export interface IQuestion {
 	complexity: number;
 	rate: number;
 }
+export interface IQuestionFilters {
+	page: number;
+	title: string;
+	specialization: string;
+	keywords: string;
+	skills: string[];
+	complexity: string[];
+	rate: string[];
+}
 
 export type QuestionResponse = IApiResponse<IQuestion[]>;

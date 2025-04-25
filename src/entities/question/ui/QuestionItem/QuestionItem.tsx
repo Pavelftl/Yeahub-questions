@@ -1,4 +1,4 @@
-import { InnerText, LinkButton, MetaInfo } from '@/shared/ui';
+import { LinkButton, MetaInfo, TextHTML } from '@/shared/ui';
 import { Accordion } from '@/shared/ui/Accordion/Accordion';
 
 import { IQuestion } from '../../model/types';
@@ -23,7 +23,7 @@ export const QuestionItem = ({ question }: Props) => {
 				}
 				title={question.title}
 			>
-				<InnerText text={question.shortAnswer} />
+				<TextHTML text={question.shortAnswer} />
 			</Accordion>
 		</li>
 	);

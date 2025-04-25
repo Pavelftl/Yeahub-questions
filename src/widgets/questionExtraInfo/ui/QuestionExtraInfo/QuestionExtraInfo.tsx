@@ -2,7 +2,8 @@ import { MetaInfo, Sidebar } from '@/shared/ui';
 
 import { IQuestion } from '@/entities/question/model/types';
 
-import { KeywordsList, SkillsList } from '@/features/filters/choose-filters';
+import { KeywordsList } from '@/features/questions/choose-keywords';
+import { SkillsList } from '@/features/skills/choose-skills';
 
 import styles from './styles.module.scss';
 

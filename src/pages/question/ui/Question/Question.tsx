@@ -1,6 +1,7 @@
 import { useParams } from 'react-router';
 
 import {
+	BackButton,
 	Container,
 	ErrorMessage,
 	Section,
@@ -9,8 +10,6 @@ import {
 } from '@/shared/ui';
 
 import { useGetQuestionByIdQuery } from '@/entities/question/api/questionApi';
-
-import { BackButton } from '@/features/navigation/navigate-to-main';
 
 import { QuestionExtraInfo } from '@/widgets/questionExtraInfo/ui/QuestionExtraInfo/QuestionExtraInfo';
 import { QuestionMainInfo } from '@/widgets/quiestionMainInfo';

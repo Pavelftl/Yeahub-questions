@@ -1,29 +1,28 @@
-import { useAppDispatch, useAppSelector } from '@/app/appStore';
-
 import {
 	COMPLEXITY_OPTIONS,
 	INITIAL_LIMIT,
 	RATE_OPTIONS,
 } from '@/shared/constants/constants';
-import { ErrorMessage, Sidebar, Skeleton } from '@/shared/ui';
+import { useAppDispatch, useAppSelector } from '@/shared/lib/hooks';
+import { ErrorMessage, ExpandableButton, Sidebar, Skeleton } from '@/shared/ui';
 
-import { setComplexity, setRate } from '@/entities/filters/model/filtersSlice';
+import {
+	setComplexity,
+	setRate,
+} from '@/entities/question/model/questionsSlice';
 import { useGetAllSkillsQuery } from '@/entities/skills/api/skillsApi';
 import { useGetAllSpecializationsQuery } from '@/entities/specializations/api/specializations';
 
-import {
-	ExpandableFilterList,
-	FilterGroup,
-	SkillsList,
-	SpecializationsList,
-} from '@/features/filters/choose-filters';
-import { SearchInput } from '@/features/filters/search-question';
+import { FilterGroup } from '@/features/questions/choose-filter-group';
+import { SearchInput } from '@/features/questions/search-questions';
+import { SkillsList } from '@/features/skills/choose-skills';
+import { SpecializationsList } from '@/features/specializations/choose-specializations';
 
 export const Filters = () => {
 	const dispatch = useAppDispatch();
 
 	const { specialization, rate, complexity } = useAppSelector(
-		state => state.filters
+		state => state.questions.filters
 	);
 
 	const { data: specializations, isLoading } =
@@ -62,12 +61,12 @@ export const Filters = () => {
 	return (
 		<Sidebar>
 			<SearchInput />
-			<ExpandableFilterList total={specializations?.total}>
+			<ExpandableButton total={specializations?.total}>
 				{limit => <SpecializationsList limit={limit} />}
-			</ExpandableFilterList>
-			<ExpandableFilterList total={skills?.total}>
+			</ExpandableButton>
+			<ExpandableButton total={skills?.total}>
 				{limit => <SkillsList limit={limit} />}
-			</ExpandableFilterList>
+			</ExpandableButton>
 			<FilterGroup
 				selected={complexity}
 				onClick={value => dispatch(setComplexity(value))}

@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
+import { questionsSlice } from '@/entities/question';
+
 import { baseApi } from '@/shared/api/baseApi';
 
-import { filtersReducer } from '@/entities/filters';
-
 export const rootReducer = combineReducers({
-	filters: filtersReducer,
+	questions: questionsSlice,
 	[baseApi.reducerPath]: baseApi.reducer,
 });
